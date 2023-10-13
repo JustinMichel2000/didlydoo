@@ -40,22 +40,8 @@ const form = document.getElementById("form");
 form.addEventListener("submit", event => {
     event.preventDefault();
 
-    // function getCurrentDate() {
-    //     const today = new Date();
-    //     const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    //     const dayOfWeek = daysOfWeek[today.getUTCDay()];
-    //     const day = String(today.getUTCDate()).padStart(2, '0');
-    //     const month = String(today.getUTCMonth() + 1).padStart(2, '0'); // Months are zero-based, so add 1.
-    //     const year = String(today.getUTCFullYear()).slice(-2); // Get the last 2 digits of the year.
-        
-    //     return `${year}-${month}-${day}`;
-    // }
-        
-    //     console.log(getCurrentDate());
-
-
     const name = document.getElementById("name").value;
-    const dates = document.getElementById("date").value;
+    const [dates] = document.getElementById("datesArray").values; // error
     const author = document.getElementById("author").value;
     const description = document.getElementById("description").value;
 
@@ -78,4 +64,16 @@ form.addEventListener("submit", event => {
             .catch(error => {
                 console.error('Error creating event:', error);
             });
+});
+
+const addDate = document.getElementById("addDate");
+
+addDate.addEventListener("click", event => {
+    event.preventDefault();
+    
+    const date = document.getElementById("date").value;
+    const datesArray = [];
+    datesArray.id = "datesArray";
+    datesArray.push(date);
+    document.getElementById("date").value = "";
 });
