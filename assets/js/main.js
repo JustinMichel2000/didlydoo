@@ -41,7 +41,7 @@ form.addEventListener("submit", event => {
     event.preventDefault();
 
     const name = document.getElementById("name").value;
-    const [dates] = document.getElementById("datesArray").values; // error
+    const dates = datesArray;
     const author = document.getElementById("author").value;
     const description = document.getElementById("description").value;
 
@@ -52,7 +52,7 @@ form.addEventListener("submit", event => {
         },
         body: JSON.stringify({
             name: name,
-            dates: [dates],
+            dates: dates,
             author: author,
             description: description,
         }),
@@ -68,12 +68,15 @@ form.addEventListener("submit", event => {
 
 const addDate = document.getElementById("addDate");
 
+const datesArray = [];
+
 addDate.addEventListener("click", event => {
     event.preventDefault();
     
     const date = document.getElementById("date").value;
-    const datesArray = [];
     datesArray.id = "datesArray";
     datesArray.push(date);
     document.getElementById("date").value = "";
+    console.log(1);
+    console.log(datesArray);
 });
