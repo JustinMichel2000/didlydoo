@@ -28,96 +28,54 @@
 //     })
 //     .catch(error => console.error(error));
 
+fetch("http://localhost:3000/api/events", {})
+    .then(response => response.json())
+    .then(events => {
+        console.table(events);
+    })
+    .catch(error => console.error(error));
 
+const form = document.getElementById("form");
 
-const addEvent = document.getElementById("addEvent");
-
-addEvent.addEventListener("click", event => {
+form.addEventListener("submit", event => {
     event.preventDefault();
 
-    const form = document.createElement("form");
-    form.id = "form";
-    document.body.appendChild(form);
-
-    const nameInput = document.createElement("input");
-    nameInput.type = "text";
-    nameInput.id = "name";
-    nameInput.placeholder = "Name";
-    form.appendChild(nameInput);
-
-    const dateInput = document.createElement("input");
-    dateInput.type = "date";
-    dateInput.id = "date";
-    form.appendChild(dateInput);
-
-    const authorInput = document.createElement("input");
-    authorInput.type = "text";
-    authorInput.id = "author";
-    authorInput.placeholder = "Author";
-    form.appendChild(authorInput);
-
-    const descriptionInput = document.createElement("input");
-    descriptionInput.type = "text";
-    descriptionInput.id = "description";
-    descriptionInput.placeholder = "Description";
-    form.appendChild(descriptionInput);
+    // function getCurrentDate() {
+    //     const today = new Date();
+    //     const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    //     const dayOfWeek = daysOfWeek[today.getUTCDay()];
+    //     const day = String(today.getUTCDate()).padStart(2, '0');
+    //     const month = String(today.getUTCMonth() + 1).padStart(2, '0'); // Months are zero-based, so add 1.
+    //     const year = String(today.getUTCFullYear()).slice(-2); // Get the last 2 digits of the year.
+        
+    //     return `${year}-${month}-${day}`;
+    // }
+        
+    //     console.log(getCurrentDate());
 
 
-    const buttonSubmit = document.createElement("button");
-    buttonSubmit.type = "submit";
-    buttonSubmit.id = "submitForm";
-    buttonSubmit.innerText = "Submit";
-    form.appendChild(buttonSubmit);
-   
-});
+    const name = document.getElementById("name").value;
+    const dates = document.getElementById("date").value;
+    const author = document.getElementById("author").value;
+    const description = document.getElementById("description").value;
 
-const submitForm = document.getElementById("form");
-
-if (submitForm) {
-    submitForm.addEventListener("submit", event => {
-        event.preventDefault();
-    
-        const name = document.getElementById("name").value;
-        const dates = document.getElementById("date").value;
-        const author = document.getElementById("author").value;
-        const description = document.getElementById("description").value;
-    
-        // fetch("http://localhost:3000/api/events", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/JSON"
-        //     },
-        //     body: JSON.stringify({
-        //         name: string, 
-        //         dates: ['YYYY-MM-DD'], 
-        //         author: string, 
-        //         description: string,
-        //     })
-        // })
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         console.log(data);
-        //     })
-        //     .catch(error => console.error(error));
-
-        fetch('http://localhost:3000/api/events', {
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                name: 'YourEventName',
-                dates: ['YYYY-MM-DD'],
-                author: 'EventAuthor',
-                description: 'EventDescription',
-            }),
+    fetch('http://localhost:3000/api/events', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            name: name,
+            dates: [dates],
+            author: author,
+            description: description,
+        }),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Event created:', data);
             })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Event created:', data);
-                })
-                .catch(error => {
-                    console.error('Error creating event:', error);
-                });
-    });
-}
+            .catch(error => {
+                console.error('Error creating event:', error);
+            });
+});
