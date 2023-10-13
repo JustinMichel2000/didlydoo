@@ -74,9 +74,6 @@ addDate.addEventListener("click", event => {
     event.preventDefault();
     
     const date = document.getElementById("date").value;
-    datesArray.id = "datesArray";
     datesArray.push(date);
     document.getElementById("date").value = "";
-    console.log(1);
-    console.log(datesArray);
 });
