@@ -153,6 +153,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 description.classList.add("eventDescription");
                 description.textContent = event.description;
                 eventHeader.appendChild(description);
+
+/////////////////////// Input participant //////////////////////////////
+
+                const eventFooter = document.querySelector("eventFooter");
+
+                let attendeeName = document.createElement("input");
+                attendeeName.type = 'text';
+                attendeeName.id = 'attendeeName';
+                attendeeName.placeholder = 'Attendee Name';
+
+                let booleanChoice = document.createElement
+
+
                 
             })
             .catch(error => console.error(error));
@@ -162,15 +175,4 @@ document.addEventListener('DOMContentLoaded', function() {
      
        
     
-            // function to display a single event by id
-    // function displaySingleEvent() {
-    //     const eventHeader = document.getElementById("eventHeader");
-    //     // const id = getID();
-        
-    
-    
-    
-       
-    
-    //////////////////////////////////////////////////////////////////        
-    
+
