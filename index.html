@@ -20,13 +20,13 @@
 <main>
 
     <div class="form">
-        <form action="form" id="form">
+        <form action="" id="form">
             <input type="text" id="name" placeholder="Name">
             <input type="date" id="date">
             <ul id="dateList"></ul>
             <button id="addDate">+</button>
             <input type="text" id="author" placeholder="Author">
-            <input type="text" id="description" placeholder="Description">
+            <textarea name="description" type="text" id="description" rows="3" cols="30" placeholder="Description"></textarea>
             <button type="submit" id="submitForm">Add Event</button>
         </form>
     </div>
@@ -35,10 +35,7 @@
 
     
     <div id="eventHeader">
-
-        <h2 id="eventName"></h2>
-        <p id="author"></p>
-        <p id="eventDescription"></p>
+        
         <button id="eventEdit">Edit</button>
         
     </div>
