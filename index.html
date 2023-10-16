@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiddlyDoo</title>
+</head>
+<body>
+<header>
+    <h1>DiddlyDoo</h1>
+
+<nav id="nav">
+    <ul id="eventList"></ul>
+</nav>
+
+</header>
+
+<main>
+
+    <div class="form">
+        <form action="form" id="form">
+            <input type="text" id="name" placeholder="Name">
+            <input type="date" id="date">
+            <button id="addDate">+</button>
+            <input type="text" id="author" placeholder="Author">
+            <input type="text" id="description" placeholder="Description">
+            <button type="submit" id="submitForm">Add Event</button>
+        </form>
+    </div>
+
+<div id="event">
+
+    
+    <div id="eventHeader">
+
+        <h2 id="eventName"></h2>
+        <p id="author"></p>
+        <p id="eventDescription"></p>
+        <button id="eventEdit">Edit</button>
+        
+    </div>
+
+    <div id="eventBody">
+        
+        <div id="eventBoard">
+            <div id="eventDates"></div>
+            <div id="AttendeeName"></div>
+            <div id="availables"></div>
+        </div>
+
+    <div id="eventFooter">
+        <input type="text" id="attendeeName" placeholder="Attendee Name">
+        <input type="checkbox" id="booleanChoice" value="false">
+        <button type= "submit" id="submitFooter">Submit</button>
+    </div>
+
+</div>
+
+
+</main>
+
+<footer>
+    <p>All rights reserved by the BETJ Company</p>
+</footer>
+
+<script defer src="assets/js/main.js"></script>
+</body>
+</html>
