@@ -28,7 +28,6 @@
 //     })
 //     .catch(error => console.error(error));
 
-document.addEventListener('DOMContentLoaded', function() { 
 
 fetch("http://localhost:3000/api/events", {})
     .then(response => response.json())
@@ -36,6 +35,8 @@ fetch("http://localhost:3000/api/events", {})
         console.table(events);
     })
     .catch(error => console.error(error));
+    
+document.addEventListener('DOMContentLoaded', function() { 
 
 const form = document.getElementById("form");
 
@@ -74,6 +75,7 @@ const addDate = document.getElementById("addDate");
 const list = document.getElementById("dateList");
 const datesArray = [];
 
+
 addDate.addEventListener("click", event => {
     event.preventDefault();
     
@@ -92,6 +94,10 @@ addDate.addEventListener("click", event => {
 
 
 });
+
+
+
+
 
 // function to put id in url
 function putID() {
