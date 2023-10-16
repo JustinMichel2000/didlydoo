@@ -1,25 +1,41 @@
 
 body{
 
-background-color: whitesmoke;
+background-color: #007f5f;
+font-family: 'Poppins', sans-serif;
 }
 
 
 
 #form {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+
+    .inputDate{
+
+        display: flex;
+        flex-direction: row;
+        justify-self: center;
+        
+
+        #addDate{
+
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+   
     
-
-
     #name, #date, #addDate, #author{
-        border: 0.2em solid grey;
+        border: 0.2rem solid grey;
         // padding: 5px; 
         background-color: lightgrey;
-        margin-left: 1%;
+        margin-left: 1rem;
+        line-height: 2rem;
+        margin-bottom: 0.5rem;
         //  display: flex;
         // flex-direction: row;
         // align-items: center;
@@ -31,10 +47,10 @@ background-color: whitesmoke;
 
     #submitForm{
 
-        margin-right: 30%;
-        margin-left: 30%;
-        margin-top: 2%;
-        border: 0.2em solid grey;
+        margin-right: 3rem;
+        margin-left: 3rem;
+        margin-top: 1rem;
+        border: 0.2rem solid grey;
         // padding: 5px; 
         background-color: lightgrey;
 
@@ -44,9 +60,9 @@ background-color: whitesmoke;
     #description{
 
         // margin-top: 5%;
-        margin-left: 1%;
+        margin-left: 1rem;
         // padding-right: 10%;
-        border: 0.2em solid grey;
+        border: 0.2rem solid grey;
         // padding: 5px; 
         background-color: lightgrey;
         
@@ -71,18 +87,54 @@ background-color: whitesmoke;
 
 #eventEdit{
 
-   margin-left: 95%;
-   margin-top: 5%;
+   margin-left: 113rem;
+   margin-bottom: 2rem ;
+   margin-top: 4rem;
+}
+
+.divevents{
+
+    display: flex;
+    justify-content: center;
+    line-height: 2rem;
+    background-color: lightgrey;
+    border: 0.2rem solid grey;
+    margin-bottom: 1rem;
+
+    .eventName{
+
+        margin-right: 1rem;
+
+    }
+    .eventAuthor{
+      
+        margin-right: 1rem;
+    }
+    .eventDescription{
+
+
+        margin-right: 1rem;
+    }
+}
+
+#eventBody{
+
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    
+    
 }
 
 #eventFooter{
 
    #attendeeName, #booleanChoice, #submitFooter{
 
-    border: 0.2em solid grey;
-    padding: 5px; 
+    border: 0.2rem solid grey;
+    // padding: 1rem; 
     background-color: lightgrey;
-    margin-left: 1em;
+    margin-left: 1rem;
+    
 
    }
     
