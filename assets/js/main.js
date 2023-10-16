@@ -60,6 +60,8 @@ form.addEventListener("submit", event => {
             .then(response => response.json())
             .then(data => {
                 console.log('Event created:', data);
+                putID();
+                displaySingleEvent();
             })
             .catch(error => {
                 console.error('Error creating event:', error);
@@ -77,3 +79,44 @@ addDate.addEventListener("click", event => {
     datesArray.push(date);
     document.getElementById("date").value = "";
 });
+
+// function to put id in url
+function putID() {
+    const id = getID();
+    const form = document.getElementById("form");
+    form.action = `http://localhost:3000/api/events/${id}`;
+}
+
+//function to get id
+function getID() {
+    const url = window.location.href;
+    const urlSplit = url.split("/");
+    const id = urlSplit[urlSplit.length - 1];
+    return id;
+}
+
+// function to display a single event by id
+function displaySingleEvent() {
+    const eventHeader = document.getElementById("eventHeader");
+    const id = getID();
+
+    fetch(`http://localhost:3000/api/events/${id}`, {})
+        .then(response => response.json())
+        .then(event => {
+            const name = document.createElement("h2");
+            name.classList.add("eventName");
+            name.textContent = event.name;
+            eventHeader.appendChild(name);
+
+            const author = document.createElement("p");
+            author.classList.add("eventAuthor");
+            author.textContent = event.author;
+            eventHeader.appendChild(author);
+
+            const description = document.createElement("p");
+            description.classList.add("eventDescription");
+            description.textContent = event.description;
+            eventHeader.appendChild(description);
+        })
+        .catch(error => console.error(error));
+}
