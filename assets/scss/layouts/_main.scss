@@ -1,0 +1,71 @@
+
+body{
+
+background-color: whitesmoke;
+}
+
+
+
+
+
+.form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+
+    #name, #date, #addDate, #author, #description, #submitForm {
+        border: 0.2em solid grey;
+        padding: 5px; 
+        background-color: lightgrey;
+       
+    }
+}
+
+.form form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form input, .form button {
+    margin: 5px;
+}
+
+
+#event{
+
+#eventEdit{
+
+   margin-left: 95%;
+   margin-top: 5%;
+}
+
+#eventFooter{
+
+   #attendeeName, #booleanChoice, #submitFooter{
+
+    border: 0.2em solid grey;
+    padding: 5px; 
+    background-color: lightgrey;
+    margin-left: 1em;
+
+   }
+    
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
