@@ -70,6 +70,7 @@ const addDate = document.getElementById("addDate");
 
 const datesArray = [];
 
+
 addDate.addEventListener("click", event => {
     event.preventDefault();
     
@@ -77,3 +78,4 @@ addDate.addEventListener("click", event => {
     datesArray.push(date);
     document.getElementById("date").value = "";
 });
+
