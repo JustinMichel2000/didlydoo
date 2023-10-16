@@ -28,6 +28,8 @@
 //     })
 //     .catch(error => console.error(error));
 
+document.addEventListener('DOMContentLoaded', function() { 
+
 fetch("http://localhost:3000/api/events", {})
     .then(response => response.json())
     .then(events => {
@@ -67,13 +69,24 @@ form.addEventListener("submit", event => {
 });
 
 const addDate = document.getElementById("addDate");
-
+const list = document.getElementById("dateList");
 const datesArray = [];
 
 addDate.addEventListener("click", event => {
     event.preventDefault();
     
     const date = document.getElementById("date").value;
-    datesArray.push(date);
-    document.getElementById("date").value = "";
+
+    if (date) {
+        const listItem = document.createElement("li");
+        listItem.textContent = date;
+        list.appendChild(listItem);
+        datesArray.push(date);
+    
+        document.getElementById("date").value = "";
+    }
+});
+
+
+
 });
