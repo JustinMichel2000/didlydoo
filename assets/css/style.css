@@ -63,28 +63,29 @@ body {
   background-color: whitesmoke;
 }
 
-.form {
+#form {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
-.form #name, .form #date, .form #addDate, .form #author, .form #description, .form #submitForm {
+#form #name, #form #date, #form #addDate, #form #author {
   border: 0.2em solid grey;
-  padding: 5px;
+  background-color: lightgrey;
+  margin-left: 1%;
+}
+#form #submitForm {
+  margin-right: 30%;
+  margin-left: 30%;
+  margin-top: 2%;
+  border: 0.2em solid grey;
   background-color: lightgrey;
 }
-
-.form form {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.form input, .form button {
-  margin: 5px;
+#form #description {
+  margin-left: 1%;
+  border: 0.2em solid grey;
+  background-color: lightgrey;
 }
 
 #event #eventEdit {
