@@ -139,20 +139,41 @@ document.addEventListener('DOMContentLoaded', function() {
             fetch(`http://localhost:3000/api/events/${id}`, {})
             .then(response => response.json())
             .then(event => {
+
+                const divevent = document.createElement('div');
+                divevent.className = 'divevents'
+                eventHeader.appendChild(divevent);
+
+
                 const name = document.createElement("h2");
                 name.classList.add("eventName");
                 name.textContent = event.name;
-                eventHeader.appendChild(name);
+                divevent.appendChild(name);
     
                 const author = document.createElement("p");
                 author.classList.add("eventAuthor");
                 author.textContent = event.author;
-                eventHeader.appendChild(author)
+                divevent.appendChild(author)
     
                 const description = document.createElement("p");
                 description.classList.add("eventDescription");
                 description.textContent = event.description;
-                eventHeader.appendChild(description);
+                divevent.appendChild(description);
+
+/////////////////////// Input participant //////////////////////////////
+
+                const eventFooter = document.querySelector("eventFooter");
+
+                let attendeeName = document.createElement("input");
+                attendeeName.type = 'text';
+                attendeeName.id = 'attendeeName';
+                attendeeName.placeholder = 'Attendee Name';
+
+                let booleanChoice = document.createElement('input')
+                attendeeName.type = 'checkbox';
+                attendeeName.id = 'booleanChoice';
+
+
                 
             })
             .catch(error => console.error(error));
@@ -162,15 +183,4 @@ document.addEventListener('DOMContentLoaded', function() {
      
        
     
-            // function to display a single event by id
-    // function displaySingleEvent() {
-    //     const eventHeader = document.getElementById("eventHeader");
-    //     // const id = getID();
-        
-    
-    
-    
-       
-    
-    //////////////////////////////////////////////////////////////////        
-    
+
