@@ -53,6 +53,10 @@ table {
   border-spacing: 0;
 }
 
+#submitform {
+  background-color: aqua;
+}
+
 h1 {
   color: #f1faee;
   text-align: center;
@@ -107,21 +111,31 @@ body {
   margin-top: 4rem;
 }
 #event .divevents {
-  display: flex;
-  justify-content: center;
   line-height: 2rem;
   background-color: lightgrey;
   border: 0.2rem solid grey;
   margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+#event .divevents .eventName, #event .divevents .eventAuthor {
+  display: flex;
+  justify-content: center;
 }
 #event .divevents .eventName {
-  margin-right: 1rem;
+  font-weight: bold;
+  font-size: large;
+  text-transform: capitalize;
 }
 #event .divevents .eventAuthor {
-  margin-right: 1rem;
+  font-style: italic;
+  font-size: medium;
+  text-transform: capitalize;
 }
 #event .divevents .eventDescription {
-  margin-right: 1rem;
+  text-align: center;
+  font-size: small;
+  text-transform: capitalize;
 }
 #event #eventBody {
   display: flex;
@@ -132,9 +146,11 @@ body {
   border: 0.2rem solid grey;
   background-color: lightgrey;
   margin-left: 1rem;
+  font-size: large;
 }
 
 footer {
   text-align: center;
   padding-top: 10em;
+  font-style: italic;
 }/*# sourceMappingURL=style.css.map */

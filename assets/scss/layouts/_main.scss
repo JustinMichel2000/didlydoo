@@ -53,6 +53,7 @@ font-family: 'Poppins', sans-serif;
         border: 0.2rem solid grey;
         // padding: 5px; 
         background-color: lightgrey;
+       
 
 
     }
@@ -94,26 +95,41 @@ font-family: 'Poppins', sans-serif;
 
 .divevents{
 
-    display: flex;
-    justify-content: center;
     line-height: 2rem;
     background-color: lightgrey;
     border: 0.2rem solid grey;
     margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    .eventName, .eventAuthor{
+
+        display: flex;
+    justify-content: center;
+    // margin-right: 1rem;
+
+    }
 
     .eventName{
 
-        margin-right: 1rem;
+        font-weight: bold;
+        font-size: large;
+        text-transform: capitalize;
+    }
 
-    }
     .eventAuthor{
-      
-        margin-right: 1rem;
+
+        font-style: italic;
+        font-size: medium;
+        text-transform: capitalize;
     }
+
     .eventDescription{
 
-
-        margin-right: 1rem;
+        // margin-right: 1rem;
+        text-align: center;
+        font-size: small;
+        text-transform: capitalize;
     }
 }
 
@@ -134,6 +150,7 @@ font-family: 'Poppins', sans-serif;
     // padding: 1rem; 
     background-color: lightgrey;
     margin-left: 1rem;
+    font-size: large;
     
 
    }
