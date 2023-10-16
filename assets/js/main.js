@@ -186,8 +186,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         .then(response => response.json())
                         .then(data => {
                             console.log("Event deleted:", data);
-                            // Refresh the list of events
-                            displayEvents();
+                            
+                            
                         })
                         .catch(error => {
                             console.error("Error deleting event:", error);
