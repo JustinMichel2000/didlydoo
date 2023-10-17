@@ -173,37 +173,33 @@ async function displayAllEvents() {
                 attendeetable.classList.add("attendeetable");
                 divevent.appendChild(attendeetable);
 
-                const attendeetabledate = document.createElement("div");
-                attendeetabledate.classList.add("attendeetabledate");
-                attendeetable.appendChild(attendeetabledate);
-
-                const attendeetableinfo = document.createElement("div");
-                attendeetableinfo.classList.add("attendeetableinfo");
-                attendeetable.appendChild(attendeetableinfo);
-
-                event.dates.forEach(element => {
-                    const attendeedate = document.createElement('span');
-                    attendeedate.className = 'attendeedate';
-                    attendeedate.textContent = element.date; 
-                    attendeetabledate.appendChild(attendeedate);   
-                    
-
-                });    
-
-            //     event.dates.attendees.forEach(element => {
-            //         const attendeeinfo = document.createElement('span');
-            //         attendeeinfo.textContent = element.available;
-            //         attendeetableinfo.appendChild(attendeeinfo);    
-
-            //   });
-                    // console.log(attendeechoice);
-                    // console.log(attendeeinfo);
-
-                    
-                    // attendeetableinfo.appendChild(attendeechoice);
+                // const attendeetabledate = document.createElement("div");
+                // attendeetabledate.classList.add("attendeetabledate");
+                // attendeetable.appendChild(attendeetabledate);
 
 
-            // });
+                event.dates.forEach(date => {
+                    const attendeetabledate = document.createElement("div");
+                    attendeetabledate.classList.add("attendeetabledate");
+                    divevent.appendChild(attendeetabledate);
+                
+                    date.attendees.forEach(attendee => {
+                        const attendeedate = document.createElement('span');
+                        attendeedate.className = 'attendeedate';
+                        attendeedate.textContent = date.date;
+                        attendeetabledate.appendChild(attendeedate);
+
+                        const attendeetableinfo = document.createElement("div");
+                        attendeetableinfo.classList.add("attendeetableinfo");
+                        attendeetable.appendChild(attendeetableinfo);
+        
+                
+                        const attendeeinfo = document.createElement('span');
+                        attendeeinfo.textContent = `${attendee.name} - Available: ${attendee.available}`;
+                        attendeetableinfo.appendChild(attendeeinfo);
+                    });
+                });
+                
                 
 
         } catch (error) {
