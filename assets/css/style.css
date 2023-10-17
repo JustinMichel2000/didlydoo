@@ -56,11 +56,11 @@ table {
   width: 4rem;
   height: 2rem;
   background-color: #F99417;
-  color: #F5F5F5;
+  color: #F5EBEB;
   font-family: "popins", sans-serif;
   border-width: 1px;
   border-radius: 1rem;
-  border-color: #F5F5F5;
+  border-color: #F5EBEB;
   margin: 1rem;
   font-size: 1rem;
   cursor: pointer;
@@ -68,66 +68,9 @@ table {
   box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75);
 }
 #deleteButton:hover {
-  background-color: #c52323;
+  background-color: #aa1d1d;
   transition: 0.4s;
 }
 #deleteButton:active {
   transform: scale(0.95);
-}
-
-form {
-  display: none;
-}
-
-body {
-  width: 100vw;
-  height: 100vh;
-  background-color: #323246;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  text-align: left;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-#eventHeader {
-  background-color: #323246;
-  border-radius: 1rem;
-  width: 90vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.divevents {
-  width: 80%;
-  background-color: #3a3963;
-  border-radius: 1rem;
-  margin: 1rem;
-  height: 25rem;
-}
-.divevents .eventName {
-  font-size: 3rem;
-  color: #F5F5F5;
-  margin: 1rem;
-}
-.divevents .eventAuthor {
-  font-size: 1.5rem;
-  color: #F5F5F5;
-  margin: 1rem;
-}
-.divevents .eventDescription {
-  font-size: 1rem;
-  color: #323246;
-  background-color: #F5F5F5;
-  margin: 1rem;
-  padding: 0.2rem;
-  height: -moz-fit-content;
-  height: fit-content;
-  border-radius: 0.2rem;
 }/*# sourceMappingURL=style.css.map */
