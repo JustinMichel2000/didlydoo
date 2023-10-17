@@ -58,10 +58,12 @@ table {
 }
 
 h1 {
-  color: #f1faee;
+  width: 100%;
+  color: #867070;
   text-align: center;
   font-size: 4em;
-  padding-bottom: 0.8em;
+  margin: 0.5rem;
+  padding: 0.5rem;
 }
 
 .btn {
@@ -99,11 +101,6 @@ h1 {
 .btn:active:after {
   top: 4px;
   left: 4px;
-}
-
-body {
-  background-color: #007f5f;
-  font-family: "Poppins", sans-serif;
 }
 
 #form {
@@ -187,7 +184,19 @@ body {
 }
 
 footer {
+  width: 100%;
+  height: 2rem;
+  margin-top: 1rem;
+  background-color: #867070;
+  color: #F5EBEB;
+  line-height: 2rem;
   text-align: center;
-  padding-top: 10em;
   font-style: italic;
+  font-size: 1rem;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #E4D0D0;
 }/*# sourceMappingURL=style.css.map */
