@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <title>DiddlyDoo</title>
+    
 </head>
 <body>
 <header>
-    <h1>DiddlyDoo</h1>
+    <h1>DidlyDoo</h1>
 
 <nav id="nav">
     <ul id="eventList"></ul>
@@ -20,9 +22,11 @@
     <div class="form">
         <form action="" id="form">
             <input type="text" id="name" placeholder="Name">
+            <div class="inputDate">
             <input type="date" id="date">
             <ul id="dateList"></ul>
             <button id="addDate">+</button>
+            </div>
             <input type="text" id="author" placeholder="Author">
             <textarea name="description" type="text" id="description" rows="3" cols="30" placeholder="Description"></textarea>
             <button type="submit" id="submitForm">Add Event</button>
