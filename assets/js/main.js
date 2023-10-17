@@ -1,39 +1,14 @@
-// get
-// fetch("http://localhost:3000/api/events", {
-//     method: "GET",
-// })
-//     .then(response => response.json())
-//     .then(events => {
-//         console.log(events);
-//     })
-//     .catch(error => console.error(error));
-
-// post
-// fetch("http://localhost:3000/api/events", {
-//     method: "POST",
-//     headers: {
-//         "Content-Type": "application/json"
-//     },
-//     body: JSON.stringify({
-//         name: "My first event",
-//         description: "This is my first event",
-//         author: "5e9b9a0f1c9d440000f0f4e4",
-//         start: "2020-01-01T10:00:00.000Z",
-//         end: "2020-01-01T12:00:00.000Z"
-//     })
-// })
-//     .then(response => response.json())
-//     .then(event => {
-//         console.log(event);
-//     })
-//     .catch(error => console.error(error));
-
 document.addEventListener('DOMContentLoaded', function() { 
 
     fetch("http://localhost:3000/api/events", {})
         .then(response => response.json())
         .then(events => {
             console.table(events);
+            // console.table(events[3].dates);
+            // console.table(events[3].dates[0].attendees[0].available);
+            // console.table(events[3].dates[0].attendees[0].name);
+            // console.table(events[3].dates[0].date);
+            
         })
         .catch(error => console.error(error));
     
@@ -61,8 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Event created:', data);
-                    putID();
+                    // console.log('Event created:', data);
+                    // putID();
                     displaySingleEvent();
                 })
                 .catch(error => {
@@ -92,58 +67,49 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     });
-    
-    // // function to put id in url
-    // function putID() {
-    //     const id = getID();
-    //     const form = document.getElementById("form");
-    //     form.action = `http://localhost:3000/api/events/${id}`;
-    // }
-    
-    //function to get id
-    // function getID() {
-    //     const url = window.location.href;
-    //     const urlSplit = url.split("/");
-    //     const id = urlSplit[urlSplit.length - 1];
-    //     return id;
-    // }
-    
-    
+      
     /////////////////////// array ID //////////////////////////////
 
     /////////////////////// arrayid events //////////////////////////////
-    fetch("http://localhost:3000/api/events", {})
-        .then(response => response.json())
-        .then(events => {
-            console.table(events);
-    
-            const numblist = [];
-            const arrayid = [];
-            
-            for (let a = 0; a < events.length; a++) {
-                numblist.push(a);
-            }
-            
-            
-            numblist.forEach((numb) => {
-                let listid = document.createElement("span");
-                listid.textContent = (events[numb].id);
-            
-                arrayid.push(listid.textContent);
 
-                // console.log(arrayid);
-            });
+    const arrayid = [];
+
+async function searchIdEvent() {
+    try {
+        const response = await fetch("http://localhost:3000/api/events");
+        const events = await response.json();
+        
+        for (let a = 0; a < events.length; a++) {
+            arrayid.push(events[a].id);
+        }
+    } catch (error) {
+        console.error("Error fetching event IDs:", error);
+    }
+}
+
+// function clearevent (){
+//     const eventHeader = document.getElementById('eventHeader')
+//     eventHeader.textContent = '';
+// }
+
+
+async function displayAllEvents() {
+    await searchIdEvent();
     
-    
-   /////////////////////// display event //////////////////////////////    
+    for (const id of arrayid) {
+        try {
+            const response = await fetch(`http://localhost:3000/api/events/${id}`);
+            const event = await response.json();
             
+            // console.table(event);
+            console.table(event.dates);
+            // console.table(event.dates[0].attendees[0].available);
+            // console.table(event.dates[0].attendees[0].name);
+            // console.table(event.dates[0].date);
 
-            arrayid.forEach((id) => {
-            fetch(`http://localhost:3000/api/events/${id}`, {})
-            .then(response => response.json())
-            .then(event => {
-
+            
                 const eventHeader = document.getElementById("eventHeader");
+                
 
                 const divevent = document.createElement('div');
                 divevent.className = 'divevents'
@@ -165,136 +131,258 @@ document.addEventListener('DOMContentLoaded', function() {
                 description.textContent = event.description;
                 divevent.appendChild(description);
 
-                ////////////ADD DELETE BUTTON///////////////
-
                 const deleteButton = document.createElement("button");
                 deleteButton.textContent = "Delete";
-                deleteButton.className = "deleteButton";
-                deleteButton.addEventListener("click", () => {
-                    deleteEvent(event.id);
-                });
+                deleteButton.id = "Delete";
+                deleteButton.className = "Delete";
                 divevent.appendChild(deleteButton);
 
-                ////////// FUNCTION FETCH METHOD DELETE///////////
+                const buttoneventEdit = document.createElement("button");
+                buttoneventEdit.textContent = "Edit";
+                buttoneventEdit.className = 'buttoneventEdit';
+                divevent.appendChild(buttoneventEdit);
 
-                function deleteEvent(id) {
-                    fetch(`http://localhost:3000/api/events/${id}`, {
-                        method: "DELETE",
-                        headers: {
-                            'Content-Type': 'application/json',
-                            },
-                    })
-                        .then(response => response.json())
-                        .then(data => {
-                            console.log("Event deleted:", data);
-                            // must add a kind of refresh function
+                const buttonsingleEvent = document.createElement('button');
+                buttonsingleEvent.id='buttonsingleEvent';
+                buttonsingleEvent.textContent = 'buttonsingleEvent';
+                divevent.appendChild(buttonsingleEvent)
+
+                const containerattendee = document.createElement("div");
+                containerattendee.classList.add("containerattendee");
+                divevent.appendChild(containerattendee);
+
+                let attendeeName = document.createElement("input");
+                attendeeName.type = 'text';
+                attendeeName.id = 'attendeeName';
+                attendeeName.placeholder = 'Attendee Name';
+                containerattendee.appendChild(attendeeName);
+
+                let booleanChoice = document.createElement('input')
+                booleanChoice.type = 'checkbox';
+                booleanChoice.id = 'booleanChoice';
+                booleanChoice.value = 'false';
+                containerattendee.appendChild(booleanChoice);
+
+                let submitFooter = document.createElement('button');
+                submitFooter.type = 'submit';
+                submitFooter.id = 'submitFooter';
+                submitFooter.textContent = 'submitFooter';
+                containerattendee.appendChild(submitFooter);
+
+                const attendeetable = document.createElement("div");
+                attendeetable.classList.add("attendeetable");
+                divevent.appendChild(attendeetable);
+
+                const attendeetabledate = document.createElement("div");
+                attendeetabledate.classList.add("attendeetabledate");
+                attendeetable.appendChild(attendeetabledate);
+
+                const attendeetableinfo = document.createElement("div");
+                attendeetableinfo.classList.add("attendeetableinfo");
+                attendeetable.appendChild(attendeetableinfo);
+
+                event.dates.forEach(element => {
+                    const attendeedate = document.createElement('span');
+                    attendeedate.className = 'attendeedate';
+                    attendeedate.textContent = element.date; 
+                    attendeetabledate.appendChild(attendeedate);   
+                    
+
+                });    
+
+                event.dates.attendees.forEach(element => {
+                    const attendeeinfo = document.createElement('span');
+                    attendeeinfo.textContent = element.available;
+                    attendeetableinfo.appendChild(attendeeinfo);    
+
+              });
+                    // console.log(attendeechoice);
+                    // console.log(attendeeinfo);
+
+                    
+                    attendeetableinfo.appendChild(attendeechoice);
+
+
+            // });
+                
+
+        } catch (error) {
+            console.error("Error fetching event:", error);
+        }
+    }
+}
+
+
+        
+
+        let buttondisplayAllEvent = document.querySelector('#displayAllEvent');
+        buttondisplayAllEvent.addEventListener('click', displayAllEvents)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// function displaySingleEvent(id) {
+//             fetch(`http://localhost:3000/api/events/${id}`)
+//                 .then(response => response.json())
+//                 .then(event => {
+//                     // create elements to display event details
+//                     const eventDiv = document.createElement('div');
+//                     const eventName = document.createElement('h2');
+//                     const eventDate = document.createElement('p');
+//                     const eventDescription = document.createElement('p');
+        
+//                     // set text content of elements
+//                     eventName.textContent = event.name;
+//                     eventDate.textContent = event.date;
+//                     eventDescription.textContent = event.description;
+        
+//                     // append elements to event div
+//                     eventDiv.appendChild(eventName);
+//                     eventDiv.appendChild(eventDate);
+//                     eventDiv.appendChild(eventDescription);
+        
+//                     // append event div to page
+//                     const eventsContainer = document.querySelector('#events-container');
+//                     eventsContainer.appendChild(eventDiv);
+//                 })
+//                 .catch(error => console.error(error));
+//         }
+
+                
+//         buttonsingleEvent.addEventListener('click', displaySingleEvent);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////////////////        
+
+
+//                 ////////////ADD DELETE BUTTON///////////////
+//                  let deleteButton = document.getElementById('Delete')
+//                 // const deleteButton = document.createElement("button");
+//                 // deleteButton.textContent = "Delete";
+//                 deleteButton.addEventListener("click", () => {
+//                     deleteEvent(event.id);
+//                 });
+//                 // divevent.appendChild(deleteButton);
+
+//                 ////////// FUNCTION FETCH METHOD DELETE///////////
+
+//                 function deleteEvent(id) {
+//                     fetch(`http://localhost:3000/api/events/${id}`, {
+//                         method: "DELETE",
+//                         headers: {
+//                             'Content-Type': 'application/json',
+//                             },
+//                     })
+//                         .then(response => response.json())
+//                         .then(data => {
+//                             console.log("Event deleted:", data);
+//                             // must add a kind of refresh function
                             
-                        })
-                        .catch(error => {
-                            console.error("Error deleting event:", error);
-                        });
-                }
+//                         })
+//                         .catch(error => {
+//                             console.error("Error deleting event:", error);
+//                         });
+//                 }
 
 
 
-       /////////////////////// EDIT //////////////////////////////
+// ////////////////////////////// EDIT //////////////////////////////
 
-       const buttoneventEdit = document.createElement("button");
-       buttoneventEdit.textContent = "Edit";
-       buttoneventEdit.className = 'buttoneventEdit';
-       divevent.appendChild(buttoneventEdit);
+//     //    const buttoneventEdit = document.createElement("button");
+//     //    buttoneventEdit.textContent = "Edit";
+//     //    buttoneventEdit.className = 'buttoneventEdit';
+//     //    divevent.appendChild(buttoneventEdit);
 
    
-// function to modify an event with fetch patch
+// // function to modify an event with fetch patch
 
-function modifyEvent(id, event) {
+// function modifyEvent(id, event) {
 
-    fetch(`http://localhost:3000/api/events/${id}`, {
-        method: "PATCH",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(event)
-    })
-    .then(response => response.json())
-    .then(event => {
+//     fetch(`http://localhost:3000/api/events/${id}`, {
+//         method: "PATCH",
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify(event)
+//     })
+//     .then(response => response.json())
+//     .then(event => {
         
-        const eventName = document.querySelector(".eventName");
-        eventName.contentEditable = true;
-        eventName.style.border = "1px solid black";
+//         const eventName = document.querySelector(".eventName");
+//         eventName.contentEditable = true;
+//         eventName.style.border = "1px solid black";
 
-        const eventAuthor = document.querySelector(".eventAuthor");
-        eventAuthor.contentEditable = true;
-        eventAuthor.style.border = "1px solid black";
+//         const eventAuthor = document.querySelector(".eventAuthor");
+//         eventAuthor.contentEditable = true;
+//         eventAuthor.style.border = "1px solid black";
 
-        const eventDescription = document.querySelector(".eventDescription");
-        eventDescription.contentEditable = true;
-        eventDescription.style.border = "1px solid black";
-    })
-    .catch(error => console.error(error));
-}
+//         const eventDescription = document.querySelector(".eventDescription");
+//         eventDescription.contentEditable = true;
+//         eventDescription.style.border = "1px solid black";
+//     })
+//     .catch(error => console.error(error));
+// }
        
-// const buttonEdit = document.getElementById("buttoneventEdit");
+// // const buttonEdit = document.getElementById("buttoneventEdit");
 
-buttoneventEdit.addEventListener("click", modifyEvent);
+// buttoneventEdit.addEventListener("click", modifyEvent);
 
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-        exit();
-    }
-});
+// document.addEventListener("keydown", (event) => {
+//     if (event.key === "Enter") {
+//         exit();
+//     }
+// });
 
-function exit() {
-    const eventName = document.querySelector(".eventName");
-    eventName.contentEditable = false;
-    eventName.style.border = "none";
+// function exit() {
+//     const eventName = document.querySelector(".eventName");
+//     eventName.contentEditable = false;
+//     eventName.style.border = "none";
 
-    const eventAuthor = document.querySelector(".eventAuthor");
-    eventAuthor.contentEditable = false;
-    eventAuthor.style.border = "none";
+//     const eventAuthor = document.querySelector(".eventAuthor");
+//     eventAuthor.contentEditable = false;
+//     eventAuthor.style.border = "none";
 
-    const eventDescription = document.querySelector(".eventDescription");
-    eventDescription.contentEditable = false;
-    eventDescription.style.border = "none";
-}
-
-
-
-/////////////////////// Input Attendee //////////////////////////////
-
-const eventFooter = document.createElement("div");
-divevent.appendChild(eventFooter);
-
-let attendeeName = document.createElement("input");
-attendeeName.type = 'text';
-attendeeName.id = 'attendeeName';
-attendeeName.placeholder = 'Attendee Name';
-eventFooter.appendChild(attendeeName);
-
-let booleanChoice = document.createElement('input')
-booleanChoice.type = 'checkbox';
-booleanChoice.id = 'booleanChoice';
-booleanChoice.value = 'false';
-eventFooter.appendChild(booleanChoice);
-
-let submitFooter = document.createElement('button');
-submitFooter.type = 'submit';
-submitFooter.id = 'submitFooter';
-submitFooter.textContent = 'submitFooter';
-eventFooter.appendChild(submitFooter);
-
-
-/////////////////////// display Attendee //////////////////////////////
+//     const eventDescription = document.querySelector(".eventDescription");
+//     eventDescription.contentEditable = false;
+//     eventDescription.style.border = "none";
+// }
 
 
 
-     });
-});
+// /////////////////////// Input Attendee //////////////////////////////
+// const containerattendee = document.getElementById('containerattendee');
 
-});
+// const eventFooter = document.createElement("div");
+// divevent.appendChild(eventFooter);
 
-     
-    
+// let attendeeName = document.createElement("input");
+// attendeeName.type = 'text';
+// attendeeName.id = 'attendeeName';
+// attendeeName.placeholder = 'Attendee Name';
+// containerattendee.appendChild(attendeeName);
 
+// let booleanChoice = document.createElement('input')
+// booleanChoice.type = 'checkbox';
+// booleanChoice.id = 'booleanChoice';
+// booleanChoice.value = 'false';
+// containerattendee.appendChild(booleanChoice);
 
+//                 let submitFooter = document.createElement('button');
+//                 submitFooter.type = 'submit';
+//                 submitFooter.id = 'submitFooter';
+//                 submitFooter.textContent = 'submitFooter';
+//                 containerattendee.appendChild(submitFooter);
 
+                
+                
+
+   /////////////////////// display Attendee //////////////////////////////
+   
+            
+    //         })
+    //         .catch(error => console.error(error));
+            
+    //    });
+    //  });
+// });
+
+// });
