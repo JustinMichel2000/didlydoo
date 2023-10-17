@@ -196,9 +196,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /////////////////////// EDIT //////////////////////////////
 
-                const eventEditButton = document.createElement("button");
-                eventEditButton.textContent = "Edit";
-                divevent.appendChild(eventEditButton);
+                const eventEdit = document.createElement("button");
+                eventEdit.textContent = "Edit";
+                eventEdit.className = 'eventEdit';
+                divevent.appendChild(eventEdit);
 
   
 
