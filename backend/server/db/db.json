@@ -1,83 +1,5 @@
 [
   {
-    "id": "fe3b62dc5d64",
-    "name": "qqqqq",
-    "author": "qqqqq",
-    "description": "qqqqq",
-    "dates": [
-      "2023-10-12"
-    ],
-    "created_at": "2023-10-16T08:16:17.144Z",
-    "num_modification": 0,
-    "last_modification": "2023-10-16T08:16:17.144Z",
-    "attendees": []
-  },
-  {
-    "id": "d706aa94afa6",
-    "name": "ggggggg",
-    "author": "qqqqq",
-    "description": "ssddds",
-    "dates": [],
-    "created_at": "2023-10-16T08:12:10.862Z",
-    "num_modification": 0,
-    "last_modification": "2023-10-16T08:12:10.862Z",
-    "attendees": []
-  },
-  {
-    "id": "5028f4e838f3",
-    "name": "Justin Michel",
-    "author": "jjjj",
-    "description": "kkkkkk",
-    "dates": [],
-    "created_at": "2023-10-16T07:32:02.527Z",
-    "num_modification": 0,
-    "last_modification": "2023-10-16T07:32:02.527Z",
-    "attendees": []
-  },
-  {
-    "id": "160ca85f24ed",
-    "name": "testTom8",
-    "author": "Tom",
-    "description": "apporte à boire fieu",
-    "dates": [
-      "2023-10-20",
-      "2023-10-21",
-      "2023-10-26"
-    ],
-    "created_at": "2023-10-16T08:43:21.464Z",
-    "num_modification": 0,
-    "last_modification": "2023-10-16T08:43:21.464Z",
-    "attendees": []
-  },
-  {
-    "id": "4d4c7e3d3897",
-    "name": "testTom7",
-    "author": "Tom",
-    "description": "apporte à boire fieu",
-    "dates": [
-      "2023-10-17",
-      "2023-10-18",
-      "2023-10-19"
-    ],
-    "created_at": "2023-10-16T08:41:52.694Z",
-    "num_modification": 0,
-    "last_modification": "2023-10-16T08:41:52.694Z",
-    "attendees": []
-  },
-  {
-    "id": "4e2f3a2b6fc6",
-    "name": "testTom3",
-    "author": "Tom",
-    "description": "apporte à boire fieu",
-    "dates": [
-      "2023-10-17"
-    ],
-    "created_at": "2023-10-16T08:29:17.224Z",
-    "num_modification": 0,
-    "last_modification": "2023-10-16T08:29:17.224Z",
-    "attendees": []
-  },
-  {
     "id": "02b5404dd885",
     "name": "testTom2",
     "author": "Tom",
@@ -103,20 +25,6 @@
     "created_at": "2023-10-16T08:21:33.788Z",
     "num_modification": 0,
     "last_modification": "2023-10-16T08:21:33.788Z",
-    "attendees": []
-  },
-  {
-    "id": "78a30e7a3b5c",
-    "name": "tom's birthday",
-    "author": "Tom",
-    "description": "apporte à boire fieu",
-    "dates": [
-      "2023-10-11",
-      "2023-10-19"
-    ],
-    "created_at": "2023-10-16T07:10:02.060Z",
-    "num_modification": 0,
-    "last_modification": "2023-10-16T07:10:02.060Z",
     "attendees": []
   },
   {
