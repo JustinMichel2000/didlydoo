@@ -66,38 +66,72 @@ document.addEventListener('DOMContentLoaded', function() {
     /////////////////////// array ID //////////////////////////////
 
     /////////////////////// arrayid events //////////////////////////////
+
     const arrayid = [];
 
-    async function searchIdEvent() {
-        try {
-            const response = await fetch("http://localhost:3000/api/events");
-            const events = await response.json();
-            
-            for (let a = 0; a < events.length; a++) {
-                arrayid.push(events[a].id);
-            }
-        } catch (error) {
-            console.error("Error fetching event IDs:", error);
-        }
-    }
-    
-    async function displayAllEvents() {
-        await searchIdEvent();
+async function searchIdEvent() {
+    try {
+        const response = await fetch("http://localhost:3000/api/events");
+        const events = await response.json();
         
-        for (const id of arrayid) {
-            try {
-                const response = await fetch(`http://localhost:3000/api/events/${id}`);
-                const event = await response.json();
-                
-                // Display event data here.
-            } catch (error) {
-                console.error("Error fetching event:", error);
-            }
+        for (let a = 0; a < events.length; a++) {
+            arrayid.push(events[a].id);
+        }
+    } catch (error) {
+        console.error("Error fetching event IDs:", error);
+    }
+}
+
+async function displayAllEvents() {
+    await searchIdEvent();
+    
+    for (const id of arrayid) {
+        try {
+            const response = await fetch(`http://localhost:3000/api/events/${id}`);
+            const event = await response.json();
+            
+            // Display event data here.
+                const eventHeader = document.getElementById("eventHeader");
+
+                const divevent = document.createElement('div');
+                divevent.className = 'divevents'
+                eventHeader.appendChild(divevent);
+
+
+                const name = document.createElement("h2");
+                name.classList.add("eventName");
+                name.textContent = event.name;
+                divevent.appendChild(name);
+    
+                const author = document.createElement("p");
+                author.classList.add("eventAuthor");
+                author.textContent = event.author;
+                divevent.appendChild(author)
+    
+                const description = document.createElement("p");
+                description.classList.add("eventDescription");
+                description.textContent = event.description;
+                divevent.appendChild(description);
+
+                const deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete";
+                deleteButton.id = "Delete";
+                deleteButton.className = "Delete";
+                divevent.appendChild(deleteButton);
+
+                const buttoneventEdit = document.createElement("button");
+                buttoneventEdit.textContent = "Edit";
+                buttoneventEdit.className = 'buttoneventEdit';
+                divevent.appendChild(buttoneventEdit);
+
+        } catch (error) {
+            console.error("Error fetching event:", error);
         }
     }
-    
-    displayAllEvents();
-            
+}
+
+displayAllEvents();
+        
 
         let buttondisplayAllEvent = document.querySelector('#displayAllEvent');
         buttondisplayAllEvent.addEventListener('click', displayAllEvent)
