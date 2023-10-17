@@ -200,7 +200,7 @@ async function displayAllEvents() {
                     // console.log(attendeeinfo);
 
                     
-                    attendeetableinfo.appendChild(attendeechoice);
+                    // attendeetableinfo.appendChild(attendeechoice);
 
 
             // });
