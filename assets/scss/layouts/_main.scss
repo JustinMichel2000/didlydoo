@@ -81,7 +81,7 @@
 .divevents{
 
     line-height: 2rem;
-    background-color: lightgrey;
+    background-color: $secondary-color;
     border: 0.2rem solid grey;
     margin-bottom: 3rem;
     margin-top: 3rem;
@@ -135,9 +135,9 @@
 
    #attendeeName, #booleanChoice{
 
-    border: 0.2rem solid grey;
+   
     // padding: 1rem; 
-    background-color: lightgrey;
+    // background-color: lightgrey;
     margin-left: 0.5rem;
     margin-top: 0.5rem;
     
@@ -147,6 +147,11 @@
    #attendeeName{
 
     font-size: medium;
+    background-color: $light-color;
+    border: 0.2rem solid $secondary-color;
+
+  
+    
        
 
    }
