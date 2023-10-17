@@ -1,11 +1,18 @@
 
 
 #form {
+    width: 17rem;
+    height: 17rem;
+    background-color: $light-color;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 1px 0px $dark-color;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    
 
     .inputDate{
 
