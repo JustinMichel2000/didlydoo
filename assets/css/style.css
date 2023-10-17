@@ -89,14 +89,14 @@ table {
 }
 
 .buttoneventEdit {
-  display: inline-block;
   padding: 10px 20px;
-  margin-left: 0.8rem;
+  margin-left: 1rem;
+  margin-bottom: 0.4rem;
   background-color: #1168be;
   color: #ffffff;
   text-align: center;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 15px;
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s;
@@ -116,13 +116,13 @@ table {
 }
 
 .deleteButton {
-  display: inline-block;
+  margin-left: 0.5rem;
   padding: 10px 20px;
   background-color: #aa1d1d;
   color: #ffffff;
   text-align: center;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 15px;
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s;
@@ -171,16 +171,15 @@ h1 {
 #form .inputDate #addDate {
   padding-left: 1rem;
   padding-right: 1rem;
+  margin-left: 1rem;
 }
 #form #name, #form #date, #form #addDate, #form #author {
   border: 0.2rem solid grey;
   background-color: lightgrey;
-  margin-left: 1rem;
   line-height: 2rem;
   margin-bottom: 0.5rem;
 }
 #form #description {
-  margin-left: 1rem;
   border: 0.2rem solid grey;
   background-color: lightgrey;
 }
@@ -189,7 +188,8 @@ h1 {
   line-height: 2rem;
   background-color: lightgrey;
   border: 0.2rem solid grey;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
   margin-left: 1rem;
   margin-right: 1rem;
 }
@@ -199,29 +199,36 @@ h1 {
 }
 #event .divevents .eventName {
   font-weight: bold;
-  font-size: large;
+  font-size: 2rem;
   text-transform: capitalize;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 #event .divevents .eventAuthor {
   font-style: italic;
-  font-size: medium;
+  font-size: 1.5rem;
   text-transform: capitalize;
+  margin-bottom: 1rem;
 }
 #event .divevents .eventDescription {
   text-align: center;
-  font-size: small;
+  font-size: 1rem;
   text-transform: capitalize;
+  margin-bottom: 1rem;
 }
 #event #eventBody {
   display: flex;
   justify-content: center;
   margin-top: 4rem;
 }
-#event #eventFooter #attendeeName, #event #eventFooter #booleanChoice, #event #eventFooter #submitFooter {
+#event #attendeeName, #event #booleanChoice {
   border: 0.2rem solid grey;
   background-color: lightgrey;
-  margin-left: 1rem;
-  font-size: large;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+#event #attendeeName {
+  font-size: medium;
 }
 
 footer {
