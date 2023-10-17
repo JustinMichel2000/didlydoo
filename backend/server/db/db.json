@@ -1,62 +1,5 @@
 [
   {
-    "id": "b8c25d3e03d7",
-    "name": "name",
-    "author": "author",
-    "description": "desc",
-    "dates": [
-      "2023-10-25",
-      "2023-10-26"
-    ],
-    "created_at": "2023-10-16T09:27:46.568Z",
-    "num_modification": 0,
-    "last_modification": "2023-10-16T09:27:46.568Z",
-    "attendees": []
-  },
-  {
-    "id": "160ca85f24ed",
-    "name": "testTom8",
-    "author": "Tom",
-    "description": "apporte à boire fieu",
-    "dates": [
-      "2023-10-20",
-      "2023-10-21",
-      "2023-10-26"
-    ],
-    "created_at": "2023-10-16T08:43:21.464Z",
-    "num_modification": 0,
-    "last_modification": "2023-10-16T08:43:21.464Z",
-    "attendees": []
-  },
-  {
-    "id": "4d4c7e3d3897",
-    "name": "testTom7",
-    "author": "Tom",
-    "description": "apporte à boire fieu",
-    "dates": [
-      "2023-10-17",
-      "2023-10-18",
-      "2023-10-19"
-    ],
-    "created_at": "2023-10-16T08:41:52.694Z",
-    "num_modification": 0,
-    "last_modification": "2023-10-16T08:41:52.694Z",
-    "attendees": []
-  },
-  {
-    "id": "4e2f3a2b6fc6",
-    "name": "testTom3",
-    "author": "Tom",
-    "description": "apporte à boire fieu",
-    "dates": [
-      "2023-10-17"
-    ],
-    "created_at": "2023-10-16T08:29:17.224Z",
-    "num_modification": 0,
-    "last_modification": "2023-10-16T08:29:17.224Z",
-    "attendees": []
-  },
-  {
     "id": "02b5404dd885",
     "name": "testTom2",
     "author": "Tom",
@@ -82,20 +25,6 @@
     "created_at": "2023-10-16T08:21:33.788Z",
     "num_modification": 0,
     "last_modification": "2023-10-16T08:21:33.788Z",
-    "attendees": []
-  },
-  {
-    "id": "78a30e7a3b5c",
-    "name": "tom's birthday",
-    "author": "Tom",
-    "description": "apporte à boire fieu",
-    "dates": [
-      "2023-10-11",
-      "2023-10-19"
-    ],
-    "created_at": "2023-10-16T07:10:02.060Z",
-    "num_modification": 0,
-    "last_modification": "2023-10-16T07:10:02.060Z",
     "attendees": []
   },
   {

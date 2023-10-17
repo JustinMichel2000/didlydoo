@@ -165,6 +165,37 @@ document.addEventListener('DOMContentLoaded', function() {
                 description.textContent = event.description;
                 divevent.appendChild(description);
 
+                ////////////ADD DELETE BUTTON///////////////
+
+                const deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete";
+                deleteButton.addEventListener("click", () => {
+                    deleteEvent(event.id);
+                });
+                divevent.appendChild(deleteButton);
+
+                ////////// FUNCTION FETCH METHOD DELETE///////////
+
+                function deleteEvent(id) {
+                    fetch(`http://localhost:3000/api/events/${id}`, {
+                        method: "DELETE",
+                        headers: {
+                            'Content-Type': 'application/json',
+                            },
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log("Event deleted:", data);
+                            // must add a kind of refresh function
+                            
+                        })
+                        .catch(error => {
+                            console.error("Error deleting event:", error);
+                        });
+                }
+
+        
+
 /////////////////////// Input Attendee //////////////////////////////
 
                 const eventFooter = document.createElement("div");
@@ -216,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //             // console.log(arrayid);
     //         });
-        });
+        // });
     
     
    /////////////////////// display event //////////////////////////////    
