@@ -2,10 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-<<<<<<< HEAD
-=======
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
->>>>>>> dev
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -56,29 +53,6 @@ table {
   border-spacing: 0;
 }
 
-<<<<<<< HEAD
-#deleteButton {
-  width: 4rem;
-  height: 2rem;
-  background-color: #F99417;
-  color: #F5EBEB;
-  font-family: "popins", sans-serif;
-  border-width: 1px;
-  border-radius: 1rem;
-  border-color: #F5EBEB;
-  margin: 1rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.4s;
-  box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75);
-}
-#deleteButton:hover {
-  background-color: #aa1d1d;
-  transition: 0.4s;
-}
-#deleteButton:active {
-  transform: scale(0.95);
-=======
 #submitform {
   background-color: aqua;
 }
@@ -216,5 +190,4 @@ footer {
   text-align: center;
   padding-top: 10em;
   font-style: italic;
->>>>>>> dev
 }/*# sourceMappingURL=style.css.map */
