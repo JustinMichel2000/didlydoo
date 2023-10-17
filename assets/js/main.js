@@ -190,12 +190,12 @@ async function displayAllEvents() {
 
                 });    
 
-                event.dates.attendees.forEach(element => {
-                    const attendeeinfo = document.createElement('span');
-                    attendeeinfo.textContent = element.available;
-                    attendeetableinfo.appendChild(attendeeinfo);    
+            //     event.dates.attendees.forEach(element => {
+            //         const attendeeinfo = document.createElement('span');
+            //         attendeeinfo.textContent = element.available;
+            //         attendeetableinfo.appendChild(attendeeinfo);    
 
-              });
+            //   });
                     // console.log(attendeechoice);
                     // console.log(attendeeinfo);
 
