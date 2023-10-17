@@ -276,17 +276,22 @@ booleanChoice.id = 'booleanChoice';
 booleanChoice.value = 'false';
 eventFooter.appendChild(booleanChoice);
 
-let submitFooter = document.createElement('button');
-submitFooter.type = 'submit';
-submitFooter.id = 'submitFooter';
-submitFooter.textContent = 'submitFooter';
-eventFooter.appendChild(submitFooter);
+                let submitFooter = document.createElement('button');
+                submitFooter.type = 'submit';
+                submitFooter.id = 'submitFooter';
+                submitFooter.textContent = 'submitFooter';
+                eventFooter.appendChild(submitFooter);
 
+                
+                
 
-/////////////////////// display Attendee //////////////////////////////
-
-
-
+   /////////////////////// display Attendee //////////////////////////////
+   
+            
+    //         })
+    //         .catch(error => console.error(error));
+            
+    //    });
      });
 });
 
