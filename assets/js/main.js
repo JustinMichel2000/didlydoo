@@ -1,33 +1,3 @@
-// get
-// fetch("http://localhost:3000/api/events", {
-//     method: "GET",
-// })
-//     .then(response => response.json())
-//     .then(events => {
-//         console.log(events);
-//     })
-//     .catch(error => console.error(error));
-
-// post
-// fetch("http://localhost:3000/api/events", {
-//     method: "POST",
-//     headers: {
-//         "Content-Type": "application/json"
-//     },
-//     body: JSON.stringify({
-//         name: "My first event",
-//         description: "This is my first event",
-//         author: "5e9b9a0f1c9d440000f0f4e4",
-//         start: "2020-01-01T10:00:00.000Z",
-//         end: "2020-01-01T12:00:00.000Z"
-//     })
-// })
-//     .then(response => response.json())
-//     .then(event => {
-//         console.log(event);
-//     })
-//     .catch(error => console.error(error));
-
 document.addEventListener('DOMContentLoaded', function() { 
 
     fetch("http://localhost:3000/api/events", {})
@@ -92,87 +62,57 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     });
-    
-    // // function to put id in url
-    // function putID() {
-    //     const id = getID();
-    //     const form = document.getElementById("form");
-    //     form.action = `http://localhost:3000/api/events/${id}`;
-    // }
-    
-    //function to get id
-    // function getID() {
-    //     const url = window.location.href;
-    //     const urlSplit = url.split("/");
-    //     const id = urlSplit[urlSplit.length - 1];
-    //     return id;
-    // }
-    
-    
+      
     /////////////////////// array ID //////////////////////////////
 
     /////////////////////// arrayid events //////////////////////////////
-    fetch("http://localhost:3000/api/events", {})
-        .then(response => response.json())
-        .then(events => {
-            console.table(events);
-    
-            const numblist = [];
-            const arrayid = [];
+    const arrayid = [];
+
+    async function searchIdEvent() {
+        try {
+            const response = await fetch("http://localhost:3000/api/events");
+            const events = await response.json();
             
             for (let a = 0; a < events.length; a++) {
-                numblist.push(a);
+                arrayid.push(events[a].id);
             }
-            
-            
-            numblist.forEach((numb) => {
-                let listid = document.createElement("span");
-                listid.textContent = (events[numb].id);
-            
-                arrayid.push(listid.textContent);
-
-                // console.log(arrayid);
-            });
+        } catch (error) {
+            console.error("Error fetching event IDs:", error);
+        }
+    }
     
+    async function displayAllEvents() {
+        await searchIdEvent();
+        
+        for (const id of arrayid) {
+            try {
+                const response = await fetch(`http://localhost:3000/api/events/${id}`);
+                const event = await response.json();
+                
+                // Display event data here.
+            } catch (error) {
+                console.error("Error fetching event:", error);
+            }
+        }
+    }
     
-   /////////////////////// display event //////////////////////////////    
+    displayAllEvents();
             
 
-            arrayid.forEach((id) => {
-            fetch(`http://localhost:3000/api/events/${id}`, {})
-            .then(response => response.json())
-            .then(event => {
-
-                const eventHeader = document.getElementById("eventHeader");
-
-                const divevent = document.createElement('div');
-                divevent.className = 'divevents'
-                eventHeader.appendChild(divevent);
+        let buttondisplayAllEvent = document.querySelector('#displayAllEvent');
+        buttondisplayAllEvent.addEventListener('click', displayAllEvent)
 
 
-                const name = document.createElement("h2");
-                name.classList.add("eventName");
-                name.textContent = event.name;
-                divevent.appendChild(name);
-    
-                const author = document.createElement("p");
-                author.classList.add("eventAuthor");
-                author.textContent = event.author;
-                divevent.appendChild(author)
-    
-                const description = document.createElement("p");
-                description.classList.add("eventDescription");
-                description.textContent = event.description;
-                divevent.appendChild(description);
+        let deleteButton = document.getElementById('Delete')
 
                 ////////////ADD DELETE BUTTON///////////////
 
-                const deleteButton = document.createElement("button");
-                deleteButton.textContent = "Delete";
+                // const deleteButton = document.createElement("button");
+                // deleteButton.textContent = "Delete";
                 deleteButton.addEventListener("click", () => {
                     deleteEvent(event.id);
                 });
-                divevent.appendChild(deleteButton);
+                // divevent.appendChild(deleteButton);
 
                 ////////// FUNCTION FETCH METHOD DELETE///////////
 
@@ -196,12 +136,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-       /////////////////////// EDIT //////////////////////////////
+////////////////////////////// EDIT //////////////////////////////
 
-       const buttoneventEdit = document.createElement("button");
-       buttoneventEdit.textContent = "Edit";
-       buttoneventEdit.className = 'buttoneventEdit';
-       divevent.appendChild(buttoneventEdit);
+    //    const buttoneventEdit = document.createElement("button");
+    //    buttoneventEdit.textContent = "Edit";
+    //    buttoneventEdit.className = 'buttoneventEdit';
+    //    divevent.appendChild(buttoneventEdit);
 
    
 // function to modify an event with fetch patch
@@ -292,13 +232,7 @@ eventFooter.appendChild(booleanChoice);
     //         .catch(error => console.error(error));
             
     //    });
-     });
-});
+    //  });
+// });
 
-});
-
-     
-    
-
-
-
+// });
