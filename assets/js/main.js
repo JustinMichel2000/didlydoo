@@ -110,7 +110,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     /////////////////////// array ID //////////////////////////////
-    /////////////////////// arrayid //////////////////////////////
+
+    /////////////////////// arrayid events //////////////////////////////
     fetch("http://localhost:3000/api/events", {})
         .then(response => response.json())
         .then(events => {
@@ -129,16 +130,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 listid.textContent = (events[numb].id);
             
                 arrayid.push(listid.textContent);
+
+                // console.log(arrayid);
             });
-    console.log(arrayid);
     
     
-            const eventHeader = document.getElementById("eventHeader");
-    
+   /////////////////////// display event //////////////////////////////    
+            
+
             arrayid.forEach((id) => {
             fetch(`http://localhost:3000/api/events/${id}`, {})
             .then(response => response.json())
             .then(event => {
+
+                const eventHeader = document.getElementById("eventHeader");
 
                 const divevent = document.createElement('div');
                 divevent.className = 'divevents'
@@ -160,27 +165,117 @@ document.addEventListener('DOMContentLoaded', function() {
                 description.textContent = event.description;
                 divevent.appendChild(description);
 
-/////////////////////// Input participant //////////////////////////////
+                ////////////ADD DELETE BUTTON///////////////
 
-                const eventFooter = document.querySelector("eventFooter");
+                const deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete";
+                deleteButton.addEventListener("click", () => {
+                    deleteEvent(event.id);
+                });
+                divevent.appendChild(deleteButton);
+
+                ////////// FUNCTION FETCH METHOD DELETE///////////
+
+                function deleteEvent(id) {
+                    fetch(`http://localhost:3000/api/events/${id}`, {
+                        method: "DELETE",
+                        headers: {
+                            'Content-Type': 'application/json',
+                            },
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log("Event deleted:", data);
+                            // must add a kind of refresh function
+                            
+                        })
+                        .catch(error => {
+                            console.error("Error deleting event:", error);
+                        });
+                }
+
+        
+
+/////////////////////// Input Attendee //////////////////////////////
+
+                const eventFooter = document.createElement("div");
+                divevent.appendChild(eventFooter);
 
                 let attendeeName = document.createElement("input");
                 attendeeName.type = 'text';
                 attendeeName.id = 'attendeeName';
                 attendeeName.placeholder = 'Attendee Name';
+                eventFooter.appendChild(attendeeName);
 
                 let booleanChoice = document.createElement('input')
-                attendeeName.type = 'checkbox';
-                attendeeName.id = 'booleanChoice';
+                booleanChoice.type = 'checkbox';
+                booleanChoice.id = 'booleanChoice';
+                booleanChoice.value = 'false';
+                eventFooter.appendChild(booleanChoice);
 
-
-                
-            })
-            .catch(error => console.error(error));
+                let submitFooter = document.createElement('button');
+                submitFooter.type = 'submit';
+                submitFooter.id = 'submitFooter';
+                submitFooter.textContent = 'submitFooter';
+                eventFooter.appendChild(submitFooter);
             
-        });
-    });
-     
+
+   /////////////////////// display Attendee //////////////////////////////
+   
+   /////////////////////// arrayid Attendee //////////////////////////////
+    
+//    fetch(`http://localhost:3000/api/attendees`, {})
+//         .then(response => response.json())
+//         .then(Attendee => {
+//             console.table(Attendee);
+    
+    //         const numblist = [];
+    //         const arrayid = [];
+            
+    //         for (let a = 0; a < events.length; a++) {
+    //             numblist.push(a);
+    //         }
+            
+            
+    //         numblist.forEach((numb) => {
+    //             let listid = document.createElement("span");
+    //             listid.textContent = (Attendee[numb].id);
+            
+    //             arrayid.push(listid.textContent);
+
+    //             // console.log(arrayid);
+    //         });
+        // });
+    
+    
+   /////////////////////// display event //////////////////////////////    
+    //         const eventHeader = document.getElementById("eventHeader");
+    
+    //         arrayid.forEach((id) => {
+    //         fetch(`http://localhost:3000/api/attendees/${id}`, {})
+    //         .then(response => response.json())
+    //         .then(Attendee => {
+    //             onsole.log(Attendee);
+                
+   
+    //             const eventBoard = document.createElement('div');
+    //             appendChild(eventBoard)
+   
+    //             const AttendeeName = document.createElement('span');
+
+    //             const eventDates = document.createElement('span');
+
+    //             const availables = document.createElement('span');
+                
+    //         })
+    //         .catch(error => console.error(error));
+            
+    //    });
+     });
+});
+
+});
+
        
     
 
