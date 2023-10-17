@@ -169,6 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const deleteButton = document.createElement("button");
                 deleteButton.textContent = "Delete";
+                deleteButton.className = "deleteButton";
                 deleteButton.addEventListener("click", () => {
                     deleteEvent(event.id);
                 });

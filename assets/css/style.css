@@ -88,14 +88,34 @@ table {
   background-clip: content-box;
 }
 
-#eventEdit {
-  margin-bottom: 4rem;
-  margin-top: 4rem;
-  position: absolute;
-  right: 20px;
+.buttoneventEdit {
   display: inline-block;
   padding: 10px 20px;
+  margin-left: 0.8rem;
   background-color: #3498db;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.buttoneventEdit:hover {
+  background-color: #2ba1f0;
+}
+
+.buttoneventEdit:active {
+  background-color: #1f618d;
+  transform: translateY(2px);
+}
+
+.deleteButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #d12d1e;
   color: #ffffff;
   text-align: center;
   text-decoration: none;
@@ -106,12 +126,12 @@ table {
   cursor: pointer;
 }
 
-#eventEdit:hover {
-  background-color: #2980b9;
+.deleteButton:hover {
+  background-color: red;
 }
 
-#eventEdit:active {
-  background-color: #1f618d;
+.deleteButton:active {
+  background-color: #a93226;
   transform: translateY(2px);
 }
 
