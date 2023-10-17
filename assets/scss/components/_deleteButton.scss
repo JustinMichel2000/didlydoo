@@ -1,0 +1,29 @@
+
+#deleteButton {
+    width: 4rem;
+    height: 2rem;
+    background-color: $orange-color;
+    color: $light-color;
+    font-family: $secondary-font;
+    
+    border: {
+      width: 1px;
+      radius: 1rem;
+      color: $light-color;
+    }
+    margin: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75);
+  
+    &:hover {
+      background-color: $red-color;
+      transition: 0.4s;
+    }
+  
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+  

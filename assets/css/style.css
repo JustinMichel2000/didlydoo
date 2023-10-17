@@ -57,6 +57,20 @@ table {
   margin-right: 3rem;
   margin-left: 3rem;
   margin-top: 1rem;
+#submitform {
+  background-color: aqua;
+}
+
+h1 {
+  width: 100%;
+  color: #867070;
+  text-align: center;
+  font-size: 4em;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.btn {
   display: inline-block;
   padding: 10px 20px;
   background-color: #186F65;
@@ -92,7 +106,7 @@ table {
   display: inline-block;
   padding: 10px 20px;
   margin-left: 0.8rem;
-  background-color: #0a73db;
+  background-color: #1168be;
   color: #ffffff;
   text-align: center;
   text-decoration: none;
@@ -110,7 +124,7 @@ table {
 }
 
 .buttoneventEdit:active {
-  background-color: #0a73db;
+  background-color: #1168be;
   transform: translateY(2px);
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
@@ -118,7 +132,7 @@ table {
 .deleteButton {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #c52323;
+  background-color: #aa1d1d;
   color: #ffffff;
   text-align: center;
   text-decoration: none;
@@ -136,29 +150,32 @@ table {
 }
 
 .deleteButton:active {
-  background-color: #c52323;
+  background-color: #aa1d1d;
   transform: translateY(2px);
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 h1 {
-  color: #f1faee;
+  width: 100%;
+  color: #867070;
   text-align: center;
   font-size: 4em;
-  padding-bottom: 0.8em;
-}
-
-body {
-  background-color: #007f5f;
-  font-family: "Poppins", sans-serif;
+  margin: 0.5rem;
+  padding: 0.5rem;
 }
 
 #form {
+  width: 17rem;
+  height: 17rem;
+  background-color: #F5EBEB;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 1px 0px #867070;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
 }
 #form .inputDate {
   display: flex;
@@ -222,7 +239,19 @@ body {
 }
 
 footer {
+  width: 100%;
+  height: 2rem;
+  margin-top: 1rem;
+  background-color: #867070;
+  color: #F5EBEB;
+  line-height: 2rem;
   text-align: center;
-  padding-top: 10em;
   font-style: italic;
+  font-size: 1rem;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #E4D0D0;
 }/*# sourceMappingURL=style.css.map */
