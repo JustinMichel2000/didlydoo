@@ -219,56 +219,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitFooter.textContent = 'submitFooter';
                 eventFooter.appendChild(submitFooter);
 
-                console.log(events.date);
-            
+                
+                
 
    /////////////////////// display Attendee //////////////////////////////
    
-   /////////////////////// arrayid Attendee //////////////////////////////
-    
-//    fetch(`http://localhost:3000/api/attendees`, {})
-//         .then(response => response.json())
-//         .then(Attendee => {
-//             console.table(Attendee);
-    
-    //         const numblist = [];
-    //         const arrayid = [];
             
-    //         for (let a = 0; a < events.length; a++) {
-    //             numblist.push(a);
-    //         }
-            
-            
-    //         numblist.forEach((numb) => {
-    //             let listid = document.createElement("span");
-    //             listid.textContent = (Attendee[numb].id);
-            
-    //             arrayid.push(listid.textContent);
-
-    //             // console.log(arrayid);
-    //         });
-        // });
-    
-    
-   /////////////////////// display event //////////////////////////////    
-    //         const eventHeader = document.getElementById("eventHeader");
-    
-    //         arrayid.forEach((id) => {
-    //         fetch(`http://localhost:3000/api/attendees/${id}`, {})
-    //         .then(response => response.json())
-    //         .then(Attendee => {
-    //             onsole.log(Attendee);
-                
-   
-    //             const eventBoard = document.createElement('div');
-    //             appendChild(eventBoard)
-   
-    //             const AttendeeName = document.createElement('span');
-
-    //             const eventDates = document.createElement('span');
-
-    //             const availables = document.createElement('span');
-                
     //         })
     //         .catch(error => console.error(error));
             
@@ -276,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
      });
 });
 
-// });
+});
 
        
     
