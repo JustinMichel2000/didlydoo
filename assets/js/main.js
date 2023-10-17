@@ -194,6 +194,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         });
                 }
 
+    /////////////////////// EDIT //////////////////////////////
+
+                const eventEditButton = document.createElement("button");
+                eventEditButton.textContent = "Edit";
+                divevent.appendChild(eventEditButton);
+
+  
+
         
 
 /////////////////////// Input Attendee //////////////////////////////
