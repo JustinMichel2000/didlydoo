@@ -13,6 +13,7 @@
     margin-left: auto;
     margin-right: auto;
     
+    
 
     .inputDate{
 
@@ -20,20 +21,17 @@
         flex-direction: row;
         justify-self: center;
         
+      
+        
 
-        #addDate{
-
-            padding-left: 1rem;
-            padding-right: 1rem;
-            margin-left: 1rem;
-        }
+       
     }
    
     
     #name, #date, #addDate, #author{
-        border: 0.2rem solid grey;
+        border: 0.2rem solid $primary-color;
         // padding: 5px; 
-        background-color: lightgrey;
+        background-color: $secondary-color;
         // margin-left: 1rem;
         line-height: 2rem;
         margin-bottom: 0.5rem;
@@ -53,9 +51,9 @@
         // margin-top: 5%;
         // margin-left: 1rem;
         // padding-right: 10%;
-        border: 0.2rem solid grey;
+        border: 0.2rem solid $primary-color;
         // padding: 5px; 
-        background-color: lightgrey;
+        background-color: $secondary-color;
         
 
     }

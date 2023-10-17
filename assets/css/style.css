@@ -75,17 +75,11 @@ table {
   background-color: #23b1a0;
 }
 
-#submitForm::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
-  background-size: 40px 40px;
-  animation: move 2s linear infinite;
-  background-clip: content-box;
+#addDate {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: 1rem;
+  color: white;
 }
 
 .buttoneventEdit {
@@ -93,6 +87,7 @@ table {
   margin-left: 1rem;
   margin-bottom: 0.4rem;
   background-color: #1168be;
+  opacity: 0.7;
   color: #ffffff;
   text-align: center;
   text-decoration: none;
@@ -105,7 +100,7 @@ table {
 }
 
 .buttoneventEdit:hover {
-  background-color: #2ba1f0;
+  background-color: #1d8dd8;
   transform: translateY(2px);
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
@@ -120,6 +115,7 @@ table {
   margin-left: 0.5rem;
   padding: 10px 20px;
   background-color: #aa1d1d;
+  opacity: 0.8;
   color: #ffffff;
   text-align: center;
   text-decoration: none;
@@ -147,6 +143,7 @@ table {
   margin-left: 1rem;
   padding: 10px 20px;
   background-color: #F99417;
+  opacity: 0.7;
   color: #ffffff;
   text-align: center;
   text-decoration: none;
@@ -159,7 +156,7 @@ table {
 }
 
 #buttonsingleEvent:hover {
-  background-color: rgb(247, 175, 42);
+  background-color: rgb(241, 159, 5);
   transform: translateY(2px);
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
@@ -197,20 +194,15 @@ h1 {
   flex-direction: row;
   justify-self: center;
 }
-#form .inputDate #addDate {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-left: 1rem;
-}
 #form #name, #form #date, #form #addDate, #form #author {
-  border: 0.2rem solid grey;
-  background-color: lightgrey;
+  border: 0.2rem solid #E4D0D0;
+  background-color: #D5B4B4;
   line-height: 2rem;
   margin-bottom: 0.5rem;
 }
 #form #description {
-  border: 0.2rem solid grey;
-  background-color: lightgrey;
+  border: 0.2rem solid #E4D0D0;
+  background-color: #D5B4B4;
 }
 
 #event .divevents {
