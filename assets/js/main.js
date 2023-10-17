@@ -194,88 +194,106 @@ document.addEventListener('DOMContentLoaded', function() {
                         });
                 }
 
+
+
+       /////////////////////// EDIT //////////////////////////////
+
+       const buttoneventEdit = document.createElement("button");
+       buttoneventEdit.textContent = "Edit";
+       buttoneventEdit.className = 'buttoneventEdit';
+       divevent.appendChild(buttoneventEdit);
+
+   
+// function to modify an event with fetch patch
+
+function modifyEvent(id, event) {
+
+    fetch(`http://localhost:3000/api/events/${id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(event)
+    })
+    .then(response => response.json())
+    .then(event => {
         
+        const eventName = document.querySelector(".eventName");
+        eventName.contentEditable = true;
+        eventName.style.border = "1px solid black";
+
+        const eventAuthor = document.querySelector(".eventAuthor");
+        eventAuthor.contentEditable = true;
+        eventAuthor.style.border = "1px solid black";
+
+        const eventDescription = document.querySelector(".eventDescription");
+        eventDescription.contentEditable = true;
+        eventDescription.style.border = "1px solid black";
+    })
+    .catch(error => console.error(error));
+}
+       
+// const buttonEdit = document.getElementById("buttoneventEdit");
+
+buttoneventEdit.addEventListener("click", modifyEvent);
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        exit();
+    }
+});
+
+function exit() {
+    const eventName = document.querySelector(".eventName");
+    eventName.contentEditable = false;
+    eventName.style.border = "none";
+
+    const eventAuthor = document.querySelector(".eventAuthor");
+    eventAuthor.contentEditable = false;
+    eventAuthor.style.border = "none";
+
+    const eventDescription = document.querySelector(".eventDescription");
+    eventDescription.contentEditable = false;
+    eventDescription.style.border = "none";
+}
+
+
 
 /////////////////////// Input Attendee //////////////////////////////
 
-                const eventFooter = document.createElement("div");
-                divevent.appendChild(eventFooter);
+const eventFooter = document.createElement("div");
+divevent.appendChild(eventFooter);
 
-                let attendeeName = document.createElement("input");
-                attendeeName.type = 'text';
-                attendeeName.id = 'attendeeName';
-                attendeeName.placeholder = 'Attendee Name';
-                eventFooter.appendChild(attendeeName);
+let attendeeName = document.createElement("input");
+attendeeName.type = 'text';
+attendeeName.id = 'attendeeName';
+attendeeName.placeholder = 'Attendee Name';
+eventFooter.appendChild(attendeeName);
 
-                let booleanChoice = document.createElement('input')
-                booleanChoice.type = 'checkbox';
-                booleanChoice.id = 'booleanChoice';
-                booleanChoice.value = 'false';
-                eventFooter.appendChild(booleanChoice);
+let booleanChoice = document.createElement('input')
+booleanChoice.type = 'checkbox';
+booleanChoice.id = 'booleanChoice';
+booleanChoice.value = 'false';
+eventFooter.appendChild(booleanChoice);
 
-                let submitFooter = document.createElement('button');
-                submitFooter.type = 'submit';
-                submitFooter.id = 'submitFooter';
-                submitFooter.textContent = 'submitFooter';
-                eventFooter.appendChild(submitFooter);
-            
+let submitFooter = document.createElement('button');
+submitFooter.type = 'submit';
+submitFooter.id = 'submitFooter';
+submitFooter.textContent = 'submitFooter';
+eventFooter.appendChild(submitFooter);
 
-   /////////////////////// display Attendee //////////////////////////////
-   
-   /////////////////////// arrayid Attendee //////////////////////////////
-    
-//    fetch(`http://localhost:3000/api/attendees`, {})
-//         .then(response => response.json())
-//         .then(Attendee => {
-//             console.table(Attendee);
-    
-    //         const numblist = [];
-    //         const arrayid = [];
-            
-    //         for (let a = 0; a < events.length; a++) {
-    //             numblist.push(a);
-    //         }
-            
-            
-    //         numblist.forEach((numb) => {
-    //             let listid = document.createElement("span");
-    //             listid.textContent = (Attendee[numb].id);
-            
-    //             arrayid.push(listid.textContent);
 
-    //             // console.log(arrayid);
-    //         });
-        // });
-    
-    
-   /////////////////////// display event //////////////////////////////    
-    //         const eventHeader = document.getElementById("eventHeader");
-    
-    //         arrayid.forEach((id) => {
-    //         fetch(`http://localhost:3000/api/attendees/${id}`, {})
-    //         .then(response => response.json())
-    //         .then(Attendee => {
-    //             onsole.log(Attendee);
-                
-   
-    //             const eventBoard = document.createElement('div');
-    //             appendChild(eventBoard)
-   
-    //             const AttendeeName = document.createElement('span');
+/////////////////////// display Attendee //////////////////////////////
 
-    //             const eventDates = document.createElement('span');
 
-    //             const availables = document.createElement('span');
-                
-    //         })
-    //         .catch(error => console.error(error));
-            
-    //    });
+
      });
 });
 
 });
 
-       
+     
     
+
+
 
