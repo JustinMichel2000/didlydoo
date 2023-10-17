@@ -187,16 +187,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitFooter.id = 'submitFooter';
                 submitFooter.textContent = 'submitFooter';
                 eventFooter.appendChild(submitFooter);
+
+                console.log(events.date);
             
 
    /////////////////////// display Attendee //////////////////////////////
    
    /////////////////////// arrayid Attendee //////////////////////////////
     
-   fetch(`http://localhost:3000/api/attendees`, {})
-        .then(response => response.json())
-        .then(Attendee => {
-            console.table(Attendee);
+//    fetch(`http://localhost:3000/api/attendees`, {})
+//         .then(response => response.json())
+//         .then(Attendee => {
+//             console.table(Attendee);
     
     //         const numblist = [];
     //         const arrayid = [];
@@ -243,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
      });
 });
 
-});
+// });
 
        
     
