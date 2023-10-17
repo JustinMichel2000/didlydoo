@@ -194,99 +194,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         });
                 }
 
-    /////////////////////// EDIT //////////////////////////////
 
-                const eventEdit = document.createElement("button");
-                eventEdit.textContent = "Edit";
-                eventEdit.className = 'eventEdit';
-                divevent.appendChild(eventEdit);
 
-  
+       /////////////////////// EDIT //////////////////////////////
 
-        
+       const buttoneventEdit = document.createElement("button");
+       buttoneventEdit.textContent = "Edit";
+       buttoneventEdit.className = 'buttoneventEdit';
+       divevent.appendChild(buttoneventEdit);
 
-/////////////////////// Input Attendee //////////////////////////////
-
-                const eventFooter = document.createElement("div");
-                divevent.appendChild(eventFooter);
-
-                let attendeeName = document.createElement("input");
-                attendeeName.type = 'text';
-                attendeeName.id = 'attendeeName';
-                attendeeName.placeholder = 'Attendee Name';
-                eventFooter.appendChild(attendeeName);
-
-                let booleanChoice = document.createElement('input')
-                booleanChoice.type = 'checkbox';
-                booleanChoice.id = 'booleanChoice';
-                booleanChoice.value = 'false';
-                eventFooter.appendChild(booleanChoice);
-
-                let submitFooter = document.createElement('button');
-                submitFooter.type = 'submit';
-                submitFooter.id = 'submitFooter';
-                submitFooter.textContent = 'submitFooter';
-                eventFooter.appendChild(submitFooter);
-            
-
-   /////////////////////// display Attendee //////////////////////////////
    
-   /////////////////////// arrayid Attendee //////////////////////////////
-    
-//    fetch(`http://localhost:3000/api/attendees`, {})
-//         .then(response => response.json())
-//         .then(Attendee => {
-//             console.table(Attendee);
-    
-    //         const numblist = [];
-    //         const arrayid = [];
-            
-    //         for (let a = 0; a < events.length; a++) {
-    //             numblist.push(a);
-    //         }
-            
-            
-    //         numblist.forEach((numb) => {
-    //             let listid = document.createElement("span");
-    //             listid.textContent = (Attendee[numb].id);
-            
-    //             arrayid.push(listid.textContent);
-
-    //             // console.log(arrayid);
-    //         });
-        // });
-    
-    
-   /////////////////////// display event //////////////////////////////    
-    //         const eventHeader = document.getElementById("eventHeader");
-    
-    //         arrayid.forEach((id) => {
-    //         fetch(`http://localhost:3000/api/attendees/${id}`, {})
-    //         .then(response => response.json())
-    //         .then(Attendee => {
-    //             onsole.log(Attendee);
-                
-   
-    //             const eventBoard = document.createElement('div');
-    //             appendChild(eventBoard)
-   
-    //             const AttendeeName = document.createElement('span');
-
-    //             const eventDates = document.createElement('span');
-
-    //             const availables = document.createElement('span');
-                
-    //         })
-    //         .catch(error => console.error(error));
-            
-    //    });
-     });
-});
-
-});
-
-       
-    
 // function to modify an event with fetch patch
 
 function modifyEvent(id, event) {
@@ -316,9 +233,9 @@ function modifyEvent(id, event) {
     .catch(error => console.error(error));
 }
        
-const buttonEdit = document.getElementById("eventEdit");
+// const buttonEdit = document.getElementById("buttoneventEdit");
 
-buttonEdit.addEventListener("click", modifyEvent);
+buttoneventEdit.addEventListener("click", modifyEvent);
 
 document.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
@@ -339,5 +256,44 @@ function exit() {
     eventDescription.contentEditable = false;
     eventDescription.style.border = "none";
 }
+
+
+
+/////////////////////// Input Attendee //////////////////////////////
+
+const eventFooter = document.createElement("div");
+divevent.appendChild(eventFooter);
+
+let attendeeName = document.createElement("input");
+attendeeName.type = 'text';
+attendeeName.id = 'attendeeName';
+attendeeName.placeholder = 'Attendee Name';
+eventFooter.appendChild(attendeeName);
+
+let booleanChoice = document.createElement('input')
+booleanChoice.type = 'checkbox';
+booleanChoice.id = 'booleanChoice';
+booleanChoice.value = 'false';
+eventFooter.appendChild(booleanChoice);
+
+let submitFooter = document.createElement('button');
+submitFooter.type = 'submit';
+submitFooter.id = 'submitFooter';
+submitFooter.textContent = 'submitFooter';
+eventFooter.appendChild(submitFooter);
+
+
+/////////////////////// display Attendee //////////////////////////////
+
+
+
+     });
+});
+
+});
+
+     
+    
+
 
 
