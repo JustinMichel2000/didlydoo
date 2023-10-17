@@ -224,10 +224,10 @@ document.addEventListener('DOMContentLoaded', function() {
    
    /////////////////////// arrayid Attendee //////////////////////////////
     
-   fetch(`http://localhost:3000/api/attendees`, {})
-        .then(response => response.json())
-        .then(Attendee => {
-            console.table(Attendee);
+//    fetch(`http://localhost:3000/api/attendees`, {})
+//         .then(response => response.json())
+//         .then(Attendee => {
+//             console.table(Attendee);
     
     //         const numblist = [];
     //         const arrayid = [];
@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //             // console.log(arrayid);
     //         });
-        });
+        // });
     
     
    /////////////////////// display event //////////////////////////////    
