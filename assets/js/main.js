@@ -278,4 +278,57 @@ document.addEventListener('DOMContentLoaded', function() {
 
        
     
+// function to modify an event with fetch patch
+
+function modifyEvent(id, event) {
+
+    fetch(`http://localhost:3000/api/events/${id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(event)
+    })
+    .then(response => response.json())
+    .then(event => {
+        
+        const eventName = document.querySelector(".eventName");
+        eventName.contentEditable = true;
+        eventName.style.border = "1px solid black";
+
+        const eventAuthor = document.querySelector(".eventAuthor");
+        eventAuthor.contentEditable = true;
+        eventAuthor.style.border = "1px solid black";
+
+        const eventDescription = document.querySelector(".eventDescription");
+        eventDescription.contentEditable = true;
+        eventDescription.style.border = "1px solid black";
+    })
+    .catch(error => console.error(error));
+}
+       
+const buttonEdit = document.getElementById("eventEdit");
+
+buttonEdit.addEventListener("click", modifyEvent);
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        exit();
+    }
+});
+
+function exit() {
+    const eventName = document.querySelector(".eventName");
+    eventName.contentEditable = false;
+    eventName.style.border = "none";
+
+    const eventAuthor = document.querySelector(".eventAuthor");
+    eventAuthor.contentEditable = false;
+    eventAuthor.style.border = "none";
+
+    const eventDescription = document.querySelector(".eventDescription");
+    eventDescription.contentEditable = false;
+    eventDescription.style.border = "none";
+}
+
 
