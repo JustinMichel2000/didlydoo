@@ -1,6 +1,9 @@
 ## About The Project
 
 The point of this project was to create a Didlydoo App using different instructions!  
+This app had to be an app similar to Trello which means an app to plan what u want.  
+We worked in a group with two front and two back.  
+We used Trello and worked with 
 
 
 
