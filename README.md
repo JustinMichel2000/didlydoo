@@ -4,16 +4,23 @@ The point of this project was to create a Didlydoo App using different instructi
 This app had to be an app similar to Trello which means an app to plan what u want.  
 We worked in a group with two front and two back.  
 We used Trello and worked with a db.  
+I personaaly worked with JS, SASS and CSS.  
 
 
 
 ### Built With  
 
-* [![React][React.js]][React-url]
-* [![Vite][Vitejs]][Vite-url]
+* [![CSS]][CSS-url]
+* [![JS]][JS-url]
+* [![SASS]][SASS-url]
+* [![Json]][Json-url]
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vitejs]: https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=fff&style=flat-square
-[Vite-url]: https://vitejs.dev/
+[CSS]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+[CSS-url]: https://developer.mozilla.org/en-US/docs/Web/CSS
+[JS]: https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E
+[Js-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+[SASS]: https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white
+[SASS-url]: https://sass-lang.com/documentation/
+[Json]: https://img.shields.io/badge/json-5E5C5C?style=for-the-badge&logo=json&logoColor=white
+[Json-url]: https://www.json.org/json-en.html
