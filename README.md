@@ -4,7 +4,7 @@ The point of this project was to create a Didlydoo App using different instructi
 This app had to be an app similar to Trello which means an app to plan what u want.  
 We worked in a group with two front and two back.  
 We used Trello and worked with a db.  
-I personaaly worked with JS, SASS and CSS.  
+I personally worked with JS, SASS and CSS.  
 
 
 
